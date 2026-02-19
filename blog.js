@@ -49,6 +49,7 @@ fetch("blog.json")
 
 // Change to the stored current theme.
 changeToCurrTheme();
+// loads user-created blogs from localStorage and displays them on the page
 function renderUserBlogs() {
   let blogs = JSON.parse(localStorage.getItem("userBlogs")) || [];
   let container = document.getElementById("user-blogs-output");
@@ -83,6 +84,7 @@ function renderUserBlogs() {
   container.innerHTML = out;
 }
 
+// for toggling the create blog form on and off
 function hideCreateForm() {
   document.getElementById("create-blog-form").style.display = "none";
   document.getElementById("create-blog-btn").style.display = "inline-block";
@@ -105,6 +107,7 @@ function submitBlog() {
     return;
   }
 
+  // save to localStorage since there's no blog API on the backend
   let blogs = JSON.parse(localStorage.getItem("userBlogs")) || [];
   let newBlog = {
     id: Date.now(),
@@ -124,6 +127,7 @@ function submitBlog() {
 }
 
 
+// removes a blog from localStorage and refreshes the cards
 function deleteBlog(id) {
   if (!confirm("Are you sure you want to delete this blog?")) return;
   let blogs = JSON.parse(localStorage.getItem("userBlogs")) || [];

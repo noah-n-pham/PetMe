@@ -135,13 +135,16 @@
 
   </footer>
 
+  <!-- reads blog data from localStorage and fills in the page -->
   <script>
     (function() {
+      // get the blog id from the url
       const params = new URLSearchParams(window.location.search);
       const blogId = parseInt(params.get("id"));
       const blogs = JSON.parse(localStorage.getItem("userBlogs")) || [];
       const blog = blogs.find(function(b) { return b.id === blogId; });
 
+      // if blog doesnt exist then show the error
       if (!blog) {
         document.querySelector("main").innerHTML =
           '<p class="text-red-500 text-center mt-10 text-2xl">Blog not found.</p>';
@@ -162,6 +165,7 @@
         document.getElementById("blog-avatar").style.display = "none";
       }
 
+      // split the blog content into paragraphs and add them to the page
       const contentDiv = document.getElementById("blog-content");
       const paragraphs = blog.content.split("\n");
       paragraphs.forEach(function(para) {
