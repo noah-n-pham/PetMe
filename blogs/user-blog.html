@@ -144,7 +144,7 @@
 
       if (!blog) {
         document.querySelector("main").innerHTML =
-          '<p class="text-center text-2xl text-red-500 mt-10">Blog not found.</p>';
+          '<p class="text-red-500 text-center mt-10 text-2xl">Blog not found.</p>';
         return;
       }
 
@@ -167,7 +167,7 @@
       paragraphs.forEach(function(para) {
         if (para.trim()) {
           const p = document.createElement("p");
-          p.className = "text-[#5b5963] my-[1rem] mx-0 text-xl";
+          p.className = "text-[#5b5963] text-xl my-[1rem] mx-0";
           p.textContent = para;
           contentDiv.appendChild(p);
         }

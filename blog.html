@@ -128,49 +128,49 @@
 
     <div class="text-center mt-4">
       <button id="create-blog-btn" onclick="showCreateForm()"
-        class="bg-amber-800 text-white font-bold py-2 px-6 rounded-md hover:bg-orange-500">
+        class="bg-amber-800 text-white hover:bg-orange-500 font-bold rounded-md py-2 px-6 rounded-md">
         Create Your Blog
       </button>
     </div>
 
-    <div id="create-blog-form" style="display:none" class="max-w-xl mx-auto mt-6 bg-white p-6 rounded-lg shadow-lg">
-      <h2 class="text-2xl font-bold text-center mb-4">Create a New Blog</h2>
+    <div id="create-blog-form" style="display:none" class="bg-white p-6 max-w-xl rounded-lg shadow-md mx-auto mt-6">
+      <h2 class="text-centerfont-bold mb-4 text-2xl">Create a New Blog</h2>
+
+      <label class="block text-sm font-medium mb-1">Blog Title</label>
+      <input type="text" id="blog-title" placeholder="Enter your blog title"
+        class="w-full mb-3 p-2 mb-3 border rounded">
 
       <label class="block text-sm mb-1">Author Name</label>
       <input type="text" id="blog-author" placeholder="Your name"
         class="w-full p-2 mb-3 border rounded">
 
-      <label class="block text-sm font-medium mb-1">Blog Title</label>
-      <input type="text" id="blog-title" placeholder="Enter your blog title"
-        class="w-full p-2 mb-3 border rounded">
-
-      <label class="block text-sm font-medium mb-1">Image URL (optional)</label>
-      <input type="text" id="blog-image" placeholder="Paste an image link"
-        class="w-full p-2 mb-3 border rounded">
-
-      <label class="block text-sm font-medium mb-1">Blog Content</label>
-      <textarea id="blog-content" rows="6" placeholder="Write your blog here..."
-        class="w-full p-2 mb-3 border rounded"></textarea>
-
       <label class="block text-sm mb-1">Profile Picture URL (optional)</label>
       <input type="text" id="blog-avatar" placeholder="Link to your profile picture"
         class="w-full p-2 mb-3 border rounded">
 
-      <label class="block text-sm font-medium mb-1">Short Description</label>
+      <label class="font-medium block text-sm  mb-1">Image URL (optional)</label>
+      <input type="text" id="blog-image" placeholder="Paste an image link"
+        class="w-full mb-3 p-2 border rounded">
+
+      <label class="font-mediumblock text-sm mb-1">Short Description</label>
       <input type="text" id="blog-description" placeholder="A short summary"
         class="w-full p-2 mb-3 border rounded">
 
+      <label class="font-medium block text-sm mb-1">Blog Content</label>
+      <textarea id="blog-content" rows="6" placeholder="Write your blog here..."
+        class="w-full p-2 mb-3 border rounded"></textarea>
+
       <div class="text-center mt-4">
         <button onclick="submitBlog()"
-          class="bg-amber-800 text-white py-2 px-6 rounded-md hover:bg-orange-500 mr-2">Submit</button>
+          class="bg-amber-800 py-2 px-6 text-white rounded-md mr-2">Submit</button>
         <button onclick="hideCreateForm()"
-          class="bg-gray-500 text-white py-2 px-6 rounded-md">Cancel</button>
+          class="text-white bg-gray-500 py-2 px-6 rounded-md">Cancel</button>
       </div>
     </div>
 
     <!---Blogs card-->
-    <div class="relative flex flex-wrap items-center justify-center grid-cols-2 mx-0 z-2 my-5" id="data-output"></div>
-    <div class="flex flex-wrap items-center justify-center mx-0 my-5" id="user-blogs-output"></div>
+    <div class="relative flex flex-wrap grid-cols-2 items-center justify-center mx-0 z-2 my-5" id="data-output"></div>
+    <div class="flex-wrap flex justify-center items-center mx-0 my-5" id="user-blogs-output"></div>
   </section>
 
   <!-- back to top button -->
